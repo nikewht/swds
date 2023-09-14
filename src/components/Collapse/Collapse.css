@@ -1,0 +1,130 @@
+.Collapse {
+  color: var(--color-typo-primary);
+
+  &_size {
+    &_2xs {
+      --vertical-space: var(--space-2xs);
+      --elements-offset: var(--space-xs);
+      --body-offset-up: var(--space-2xs);
+      --body-offset-bottom: var(--space-xs);
+    }
+
+    &_xs {
+      --vertical-space: var(--space-2xs);
+      --elements-offset: var(--space-xs);
+      --body-offset-up: var(--space-2xs);
+      --body-offset-bottom: var(--space-xs);
+    }
+
+    &_s {
+      --vertical-space: var(--space-xs);
+      --elements-offset: var(--space-xs);
+      --body-offset-up: var(--space-xs);
+      --body-offset-bottom: var(--space-m);
+    }
+
+    &_m {
+      --vertical-space: var(--space-s);
+      --elements-offset: var(--space-s);
+      --body-offset-up: var(--space-s);
+      --body-offset-bottom: var(--space-xl);
+    }
+
+    &_l {
+      --vertical-space: var(--space-s);
+      --elements-offset: var(--space-s);
+      --body-offset-up: var(--space-s);
+      --body-offset-bottom: var(--space-xl);
+    }
+  }
+
+  &_view {
+    &_clear {
+      --collapse-bg: transparent;
+      --collapse-bg-hover: var(--color-control-bg-clear-hover);
+    }
+
+    &_ghost {
+      --collapse-bg: var(--color-control-bg-ghost);
+      --collapse-bg-hover: var(--color-control-bg-ghost-hover);
+    }
+  }
+
+  &-Label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: var(--collapse-label-padding);
+    background: var(--collapse-bg);
+    border-radius: var(--collapse-label-radius);
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &_hoverEffect {
+      &:hover {
+        background: var(--collapse-bg-hover);
+      }
+    }
+
+    &_form {
+      &_brick {
+        --collapse-label-padding: var(--vertical-space) var(--horizontal-space);
+        --collapse-label-radius: 0;
+      }
+
+      &_default {
+        --collapse-label-padding: var(--vertical-space) var(--horizontal-space);
+        --collapse-label-radius: var(--control-radius);
+      }
+
+      &_round {
+        --collapse-label-padding: var(--vertical-space) var(--horizontal-space);
+        --collapse-label-radius: var(--space-3xl);
+      }
+    }
+  }
+
+  &-Body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.5, 1);
+
+    &_isOpen {
+      max-height: var(--collapse-body-max-height);
+    }
+
+    &_divider {
+      border-bottom: 1px solid var(--color-bg-border);
+    }
+  }
+
+  &-Side {
+    margin-left: var(--elements-offset);
+    line-height: 0;
+  }
+
+  &-Content {
+    padding:
+      var(--body-offset-up) var(--horizontal-space)
+      var(--body-offset-bottom) var(--horizontal-space);
+  }
+
+  &-Icon {
+    flex: none;
+
+    &_position {
+      &_left {
+        margin-right: var(--elements-offset);
+      }
+
+      &_right {
+        margin-left: var(--elements-offset);
+      }
+    }
+  }
+
+  &-LabelText {
+    flex: 1;
+  }
+}

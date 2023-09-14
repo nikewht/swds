@@ -1,0 +1,117 @@
+import { MdxMenu } from '@consta/stand';
+import { SkeletonBrick, SkeletonCircle, SkeletonText } from '../Skeleton';
+import { Example } from '@consta/stand';
+
+```tsx
+import {
+  SkeletonBrick,
+  SkeletonCircle,
+  SkeletonText,
+} from '@consta/uikit/Skeleton';
+```
+
+<MdxMenu>
+
+- [Прямоугольный скелетон](#прямоугольный-скелетон)
+  - [Свойства](#свойства-skeletonbrick)
+- [Круглый скелетон](#круглый-скелетон)
+  - [Свойства](#свойства-skeletoncircle)
+- [Скелетон для текста](#скелетон-для-текста)
+  - [Свойства](#свойства-skeletontext)
+
+</MdxMenu>
+
+## Прямоугольный скелетон
+
+Чтобы сделать плейсхолдер для картинки или другого прямоугольного блока,
+используйте `<SkeletonBrick />`. У такого скелетона можно менять ширину — в свойстве `width` и высоту — в свойстве `height`.
+
+```tsx
+<SkeletonBrick height={200} />
+```
+
+<Example col={1}>
+  <SkeletonBrick height={200} />
+</Example>
+
+### Импорт
+
+```tsx
+import { SkeletonBrick } from '@consta/uikit/Skeleton';
+```
+
+### Свойства SkeletonBrick
+
+| Свойство     | Тип                       | По умолчанию | Описание                 |
+| ------------ | ------------------------- | ------------ | ------------------------ |
+| `width?`     | `CSSProperties['width']`  | `'100%'`     | Ширина блока             |
+| `height`     | `CSSProperties['height']` | -            | Высота блока в пикселях  |
+| `className?` | `string`                  | -            | Дополнительный CSS-класс |
+
+## Круглый скелетон
+
+Круглый скелетон — `<SkeletonCircle />` — можно показывать на месте аватарок. Диаметр круга меняется в свойстве `size`.
+
+```tsx
+<SkeletonCircle size={60} />
+```
+
+<Example col={1}>
+  <SkeletonCircle size={60} />
+</Example>
+
+### Импорт SkeletonCircle
+
+```tsx
+import { SkeletonCircle } from '@consta/uikit/Skeleton';
+```
+
+### Свойства SkeletonCircle
+
+| Свойство     | Тип                                                | По умолчанию | Описание                 |
+| ------------ | -------------------------------------------------- | ------------ | ------------------------ |
+| `size`       | `CSSProperties['width'] & CSSProperties['height']` | -            | Диаметр круга в пикселях |
+| `className?` | `string`                                           | -            | Дополнительный CSS-класс |
+
+## Скелетон для текста
+
+Вместо незагруженного текста можно показать `<SkeletonText />`. У него можно регулировать:
+
+- количество строк — `rows`,
+- размер шрифта — `fontSize`
+- и высоту строки —  `lineHeight`.
+
+#### Пример скелетона для обычного текста
+
+```tsx
+<SkeletonText rows={4} />
+```
+
+<Example col={1}>
+  <SkeletonText rows={4} />
+</Example>
+
+#### Пример скелетона для мелкого текста
+
+```tsx
+<SkeletonText rows={2} fontSize="2xs" lineHeight="xs" />
+```
+
+<Example col={1}>
+  <SkeletonText rows={2} fontSize="2xs" lineHeight="xs" />
+</Example>
+
+### Импорт SkeletonText
+
+```tsx
+import { SkeletonText } from '@consta/uikit/Skeleton';
+```
+
+### Свойства SkeletonText
+
+| Свойство      | Тип                                                                   | По умолчанию | Описание                 |
+| ------------- | --------------------------------------------------------------------- | ------------ | ------------------------ |
+| `rows`        | `number`                                                              | -            | Количество строк         |
+| `fontSize?`   | `'2xs', 'xs', 's', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl'` | `'m'`        | Размер текста            |
+| `lineHeight?` | `'2xs', 'xs', 's', 'm', 'l'`                                          | `'m'`        | Высота строки            |
+| `className?`  | `string`                                                              | -            | Дополнительный CSS-класс |

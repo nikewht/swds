@@ -1,0 +1,48 @@
+.Text.ListItem.TabsTab {
+  --tab-indent: var(--space-m);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-typo-secondary);
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  transition: color 0.2s;
+
+  &:not(&_renderInDropdown) {
+    line-height: var(--size-text-2xl);
+  }
+
+  &_checked:not(&_disabled),
+  &:hover:not(&_disabled) {
+    color: var(--color-typo-primary);
+  }
+
+  &:not(&_renderInDropdown)&::before {
+    content: '';
+    position: absolute;
+    top: 0;
+
+    /* Увеличиваем область клика и фокуса */
+    right: calc(-1 * var(--space-2xs));
+    left: calc(-1 * var(--space-2xs));
+    bottom: 0;
+    display: block;
+    width: auto;
+    background: transparent;
+    border-radius: var(--control-radius);
+    opacity: 1;
+  }
+
+  &_disabled {
+    color: var(--color-control-typo-disable);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &_onlyIcon {
+    justify-content: center;
+  }
+}

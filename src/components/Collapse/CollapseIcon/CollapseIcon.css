@@ -1,0 +1,37 @@
+.CollapseIcon {
+  color: var(--icon-color);
+
+  &_view {
+    &_clear {
+      --icon-color: var(--color-typo-primary);
+    }
+
+    &_ghost {
+      --icon-color: var(--color-control-typo-ghost);
+    }
+  }
+
+  &-Wrapper {
+    position: relative;
+  }
+
+  &-Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--button-size);
+    height: var(--button-size);
+    background: var(--color-control-bg-ghost);
+    border-radius: 50%;
+
+    &_size {
+      &_xs {
+        --button-size: var(--control-height-xs);
+      }
+
+      &_s {
+        --button-size: var(--control-height-s);
+      }
+    }
+  }
+}

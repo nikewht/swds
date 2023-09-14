@@ -1,0 +1,13 @@
+.HeaderButtonExample {
+  &-Login {
+    cursor: pointer;
+
+    &_isLogged {
+      padding: 0;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

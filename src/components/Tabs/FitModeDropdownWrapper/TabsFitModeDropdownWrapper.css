@@ -1,0 +1,20 @@
+.TabsFitModeDropdownWrapper {
+  display: flex;
+  align-items: center;
+
+  &-Tabs {
+    max-width: 100%;
+  }
+
+  &-MoreItems {
+    position: absolute;
+  }
+
+  &-MoreItems_hidden,
+  &-Tab_hidden {
+    position: absolute;
+    left: -300vw;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

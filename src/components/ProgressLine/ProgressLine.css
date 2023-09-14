@@ -1,0 +1,110 @@
+.ProgressLine {
+  position: relative;
+  width: 100%;
+
+  &_size {
+    &_s {
+      --progress-line-height: var(--space-3xs);
+    }
+
+    &_m {
+      --progress-line-height: var(--space-2xs);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+
+  &_mode {
+    &_step {
+      min-height: var(--progress-line-height);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: var(--progress-line-height);
+        background: var(--color-bg-system);
+        mask-image: var(--progress-line-mask);
+      }
+
+      &::after {
+        width: var(--progress-line-background-active-width);
+        height: var(--progress-line-height);
+        background: var(--color-control-bg-primary);
+        transition: width 0.3s;
+        mask-image: var(--progress-line-mask);
+      }
+    }
+
+    &_determinate {
+      height: var(--progress-line-height);
+      background: var(--color-bg-system);
+
+      &::after {
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-bg-brand);
+        transition: transform 0.3s;
+        transform: scaleX(var(--progress-line-value));
+        transform-origin: left;
+      }
+    }
+
+    &_indeterminate {
+      overflow-x: hidden;
+      height: var(--progress-line-height);
+      background: var(--color-bg-system);
+
+      &::after {
+        width: 80%;
+        height: 100%;
+        background-color: var(--color-bg-brand);
+        transition: transform 0.3s;
+        transform-origin: left;
+        animation: ProgressLineAnimation 2s linear infinite;
+      }
+    }
+  }
+
+  &-Step {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &-Steps {
+    --progress-line-width-no-gap:
+      calc(
+        100% - calc(calc(var(--progress-line-steps) - 1) * var(--space-3xs))
+      );
+    display: grid;
+    height: auto;
+    margin-top: var(--progress-line-height);
+    background: transparent;
+    grid-template-columns:
+      repeat(
+        var(--progress-line-steps),
+        calc(var(--progress-line-width-no-gap) / var(--progress-line-steps))
+      );
+    grid-gap: var(--space-3xs);
+  }
+
+  &-Label {
+    margin-top: var(--space-3xs);
+  }
+}
+
+@keyframes ProgressLineAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(130%);
+  }
+}

@@ -1,0 +1,7 @@
+.MixPopoverAnimateExample {
+  &-Popover {
+    padding: var(--space-m);
+    background: var(--color-bg-default);
+    box-shadow: var(--shadow-layer);
+  }
+}

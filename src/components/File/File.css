@@ -1,0 +1,19 @@
+.File {
+  position: relative;
+
+  &-Loader {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--space-m);
+    height: var(--space-m);
+    background-color: var(--color-control-bg-ghost);
+    border-radius: 50%;
+  }
+
+  &-Progress {
+    display: block;
+    color: #575b5e;
+  }
+}

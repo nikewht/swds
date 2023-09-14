@@ -1,0 +1,46 @@
+.MixCard {
+  box-sizing: border-box;
+
+  &_shadow {
+    box-shadow: var(--shadow-group);
+  }
+
+  &_border {
+    border: var(--control-border-width) solid var(--color-bg-border);
+  }
+
+  &_form {
+    &_round,
+    &_square {
+      border-radius: var(--border-radius);
+    }
+
+    &_round {
+      --border-radius: var(--control-radius);
+    }
+
+    &_square {
+      --border-radius: 0;
+    }
+  }
+
+  &_status {
+    &_alert,
+    &_success,
+    &_warning {
+      border: var(--control-border-width) solid var(--border-color);
+    }
+
+    &_alert {
+      --border-color: var(--color-bg-alert);
+    }
+
+    &_success {
+      --border-color: var(--color-bg-success);
+    }
+
+    &_warning {
+      --border-color: var(--color-bg-warning);
+    }
+  }
+}

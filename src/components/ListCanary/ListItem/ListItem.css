@@ -1,0 +1,40 @@
+.ListItem {
+  position: relative;
+  background: var(--color-control-bg-clear);
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &_interactive {
+    cursor: pointer;
+  }
+
+  &_active,
+  &_interactive:hover {
+    background: var(--color-control-bg-clear-hover);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--space-3xs);
+    background-color: var(--color-control-typo-secondary);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &_checked.Text {
+    color: var(--color-control-typo-secondary);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &_disabled.Text {
+    color: var(--color-control-typo-disable);
+    cursor: auto;
+  }
+}

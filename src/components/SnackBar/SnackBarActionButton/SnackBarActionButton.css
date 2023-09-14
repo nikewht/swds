@@ -1,0 +1,9 @@
+.SnackBarActionButton {
+  filter: drop-shadow(0 0 0 var(--color-bg-soft));
+
+  &-ActionButtonsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+}

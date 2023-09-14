@@ -1,0 +1,47 @@
+.AvatarGroup {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  width: 100%;
+
+  &_size {
+    &_xs {
+      --avatar-group-margin: var(--space-3xs);
+    }
+
+    &_s {
+      --avatar-group-margin: var(--space-2xs);
+    }
+
+    &_m {
+      --avatar-group-margin: calc(var(--space-3xs) + var(--space-2xs));
+    }
+
+    &_l {
+      --avatar-group-margin: var(--space-xs);
+    }
+  }
+
+  & > .Avatar {
+    flex: none;
+    box-shadow: 0 0 0 var(--space-3xs) var(--color-bg-default);
+
+    &:not(:last-child) {
+      margin-left: calc(-1 * var(--avatar-group-margin));
+    }
+  }
+
+  &-Avatar_hidden.Avatar,
+  &-More_hidden.Avatar {
+    position: absolute;
+    left: -300vw;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &-More.Avatar {
+    --avatar-color: var(--color-bg-system);
+    color: var(--color-typo-primary);
+    border: none;
+  }
+}

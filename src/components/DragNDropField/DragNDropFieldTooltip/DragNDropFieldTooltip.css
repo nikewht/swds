@@ -1,0 +1,5 @@
+.DragNDropFieldTooltip {
+  &-Text {
+    word-break: break-word;
+  }
+}

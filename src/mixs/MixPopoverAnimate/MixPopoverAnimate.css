@@ -1,0 +1,49 @@
+.MixPopoverAnimate {
+  --mix-dropdown-animate-space: var(--space-s);
+  --mix-dropdown-animate-transform:
+    translate(
+      0,
+      var(--mix-dropdown-animate-space)
+    );
+  --mix-dropdown-animate-timeout: 0.2s;
+  --mix-dropdown-animate-trasition:
+    opacity var(--mix-dropdown-animate-timeout),
+    transform var(--mix-dropdown-animate-timeout);
+
+  &_animate {
+    &_exit {
+      opacity: 1;
+      pointer-events: none;
+      transform: translate(0);
+    }
+
+    &_enter,
+    &_exitActive,
+    &_exitDone,
+    &_exited,
+    &_exiting,
+    &_unmounted {
+      opacity: 0;
+      pointer-events: none;
+      transform: var(--mix-dropdown-animate-transform);
+    }
+
+    &_enterDone,
+    &_enterActive,
+    &_entered,
+    &_entering {
+      opacity: 1;
+      transform: translate(0);
+    }
+
+    &_entered,
+    &_entering,
+    &_exiting,
+    &_enterDone,
+    &_exitActive,
+    &_enterActive,
+    &_exitDone {
+      transition: var(--mix-dropdown-animate-trasition);
+    }
+  }
+}

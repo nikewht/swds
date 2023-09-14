@@ -1,0 +1,38 @@
+.TableSelectedOptionsList {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-right: var(--space-s);
+  border-bottom: var(--table-border);
+
+  &-Options {
+    display: flex;
+    flex: 1;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 0 var(--cell-padding-horizontal);
+    flex-wrap: wrap;
+  }
+
+  &-Option {
+    max-width: 100%;
+    margin: var(--space-2xs) 0;
+    margin-right: var(--space-2xs);
+
+    & .TagBase-Label {
+      overflow: hidden;
+      max-width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-Button {
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+
+    .TableSelectedOptionsList:hover & {
+      opacity: 1;
+    }
+  }
+}

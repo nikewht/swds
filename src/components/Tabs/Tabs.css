@@ -1,0 +1,67 @@
+.Tabs {
+  position: relative;
+
+  &_direction {
+    &_horizontal {
+      width: 100%;
+    }
+  }
+
+  &_size {
+    &_xs {
+      --list-offset: var(--space-xs);
+    }
+
+    &_s {
+      --list-offset: var(--space-s);
+    }
+
+    &_m {
+      --list-offset: var(--space-m);
+    }
+  }
+
+  &-List {
+    position: relative;
+    display: flex;
+
+    &_direction {
+      &_horizontal {
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      &_vertical {
+        flex-direction: column;
+      }
+    }
+
+    &_linePosition {
+      &_left {
+        padding-left: var(--list-offset);
+      }
+
+      &_right {
+        padding-right: var(--list-offset);
+      }
+    }
+  }
+
+  &-Tab {
+    flex-shrink: 0;
+
+    &_direction {
+      &_horizontal {
+        margin-right: var(--space-m);
+      }
+
+      &_vertical {
+        text-align: left;
+
+        & > * {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
